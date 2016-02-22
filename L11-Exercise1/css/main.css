@@ -1,10 +1,12 @@
 /*! HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
 
+
 /*
  * What follows is the result of much research on cross-browser styling.
  * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
  * Kroc Camen, and the H5BP dev community and team.
  */
+
 
 /* ==========================================================================
    Base styles: opinionated defaults
@@ -16,13 +18,19 @@ html {
     line-height: 1.4;
 }
 
+
 /* apply a natural box layout model to all elements, but allowing components to change */
+
 html {
     box-sizing: border-box;
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
     box-sizing: inherit;
 }
+
 
 /*
  * Remove text-shadow in selection highlight:
@@ -42,6 +50,7 @@ html {
     text-shadow: none;
 }
 
+
 /*
  * A better looking default horizontal rule
  */
@@ -54,6 +63,7 @@ hr {
     margin: 1em 0;
     padding: 0;
 }
+
 
 /*
  * Remove the gap between audio, canvas, iframes,
@@ -70,6 +80,7 @@ video {
     vertical-align: middle;
 }
 
+
 /*
  * Remove default fieldset styles.
  */
@@ -80,6 +91,7 @@ fieldset {
     padding: 0;
 }
 
+
 /*
  * Allow only vertical resizing of textareas.
  */
@@ -87,6 +99,7 @@ fieldset {
 textarea {
     resize: vertical;
 }
+
 
 /* ==========================================================================
    Browser Upgrade Prompt
@@ -99,32 +112,110 @@ textarea {
     padding: 0.2em 0;
 }
 
+
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
 
-div {
-    height: 400px;
+header {
+    background: grey;
+}
+
+body {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+nav li {
+    display: inline-block;
+    color: white;
+    margin: 20px 30px 20px 0;
+}
+
+.hamburger {
+    display: none;
+}
+
+p {
+    padding: 20px;
     background: pink;
-    
+    margin: 10px;
+}
+
+div div p {
+    background: grey;
+    margin: 10px;
+}
+
+.one-fourth {
+    width: 25%;
+    float: left;
+}
+
+.clear {
+    clear: both;
+}
+
+.one-third {
+    width: 33.33%;
+    float: left;
+}
+
+.container {
+    background: orange;
 }
 
 
+/* ==========================================================================
+Mobile
+*/
 
+@media only screen and (max-width: 600px) {
+    /* Style adjustments for viewports that meet the condition */
+    body {
+        max-width: 100%;
+    }
+    .one-fourth {
+        width: 100%;
+        margin-right: 0;
+        float: none;
+    }
+    .one-third {
+        width: 100%;
+        margin-right: 0;
+        float: none;
 
-
-
-
-
-
-
-
-
-
+    }
+    .hamburger {
+        display: inline-block;
+        color: white;
+        padding: 20px;
+        background: blue;
+    }
+    
+    nav ul {
+        display: none;
+        padding: 0;
+        margin: 0;
+        position: fixed;
+        width: 100%;
+    }
+    
+    nav li {
+        display: block;
+        color: white;
+        background: blue;
+        margin: 0;
+        padding: 20px;
+        border-bottom: 1px solid darkblue;
+    }
+    
+}
 
 /* ==========================================================================
    Helper classes
    ========================================================================== */
+
 
 /*
  * Hide visually and from screen readers
@@ -133,6 +224,7 @@ div {
 .hidden {
     display: none !important;
 }
+
 
 /*
  * Hide only visually, but have it available for screen readers:
@@ -150,6 +242,7 @@ div {
     width: 1px;
 }
 
+
 /*
  * Extends the .visuallyhidden class to allow the element
  * to be focusable when navigated to via the keyboard:
@@ -166,6 +259,7 @@ div {
     width: auto;
 }
 
+
 /*
  * Hide visually and from screen readers, but maintain layout
  */
@@ -173,6 +267,7 @@ div {
 .invisible {
     visibility: hidden;
 }
+
 
 /*
  * Clearfix: contain floats
@@ -188,13 +283,16 @@ div {
 
 .clearfix:before,
 .clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+    content: " ";
+    /* 1 */
+    display: table;
+    /* 2 */
 }
 
 .clearfix:after {
     clear: both;
 }
+
 
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
@@ -202,16 +300,17 @@ div {
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
+@media only screen and (max-width: 600px) {
     /* Style adjustments for viewports that meet the condition */
 }
 
 @media print,
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 1.25dppx),
-       (min-resolution: 120dpi) {
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
     /* Style adjustments for high resolution devices */
 }
+
 
 /* ==========================================================================
    Print styles.
@@ -226,66 +325,55 @@ div {
     *:first-letter,
     *:first-line {
         background: transparent !important;
-        color: #000 !important; /* Black prints faster:
+        color: #000 !important;
+        /* Black prints faster:
                                    http://www.sanbeiji.com/archives/953 */
         box-shadow: none !important;
         text-shadow: none !important;
     }
-
     a,
     a:visited {
         text-decoration: underline;
     }
-
     a[href]:after {
         content: " (" attr(href) ")";
     }
-
     abbr[title]:after {
         content: " (" attr(title) ")";
     }
-
     /*
      * Don't show links that are fragment identifiers,
      * or use the `javascript:` pseudo protocol
      */
-
     a[href^="#"]:after,
     a[href^="javascript:"]:after {
         content: "";
     }
-
     pre,
     blockquote {
         border: 1px solid #999;
         page-break-inside: avoid;
     }
-
     /*
      * Printing Tables:
      * http://css-discuss.incutio.com/wiki/Printing_Tables
      */
-
     thead {
         display: table-header-group;
     }
-
     tr,
     img {
         page-break-inside: avoid;
     }
-
     img {
         max-width: 100% !important;
     }
-
     p,
     h2,
     h3 {
         orphans: 3;
         widows: 3;
     }
-
     h2,
     h3 {
         page-break-after: avoid;
